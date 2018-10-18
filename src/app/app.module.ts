@@ -15,12 +15,15 @@ import { InMemoryEntryService } from './backend';
     FormsModule,
     InMemoryWebApiModule.forRoot(InMemoryEntryService)
   ],
-  providers: [ EntryService ],
-  declarations: [AppComponent,
+  providers: [ 
+              EntryService 
+             ],
+  declarations: [
+                AppComponent,
                  EntryComponent, 
                  EntryListComponent,
                  EntryCommentFormComponent
-              ],
+                ],
   bootstrap: [AppComponent]
 })
 

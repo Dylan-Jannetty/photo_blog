@@ -13,13 +13,13 @@ export class EntryCommentFormComponent {
     comment: string = "";
     @Input() entryId: number;
     @Output() onCommentAdded = new EventEmitter<{name: string; comment: string;}>();
-    @ViewChild('commentForm') commentForm: ngForm;
+    @ViewChild('commentForm') commentForm: NgForm;
     
     constructor(private entryService: EntryService) {
       
     }
     
-    onSubmit(commentForm) {
+    onSubmit(commentForm: string) {
       if (this.commentForm.invalid) return;
       let comment = { name: this.name, comment: this.comment};
       this.entryService.addComment(this.entryId, comment)
